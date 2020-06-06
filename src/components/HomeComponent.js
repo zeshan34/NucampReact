@@ -15,7 +15,7 @@ function RenderCard({item}) {
 
 
 function Home(props) {
-    eturn (
+    return (
         <div className="container">
             <div className="row">
                 <div className="col-md m-1">
