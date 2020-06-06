@@ -3,19 +3,21 @@ import { Card, CardImg, CardImgOverlay, CardText, CardBody, CardTitle } from 're
 
 class CampsiteInfo extends Component{
 
-    renderCampsite(campsite){
-        return(
-            <div className="col-md-5 m-1" >
-                 <Card>
-                    <CardImg top src={campsite.image} alt={campsite.name} />
-                    <CardBody>
-                        <CardTitle>{campsite.name}</CardTitle>
-                        <CardText>{campsite.description}</CardText>
-                    </CardBody>
-                </Card>
-            </div>
+    renderCampsite(campsite) {
+        if(campsite){
 
-        );
+            return(
+                <div className="col-md-5 m-1">
+                    <Card>
+                        <CardImg top src={campsite.image} alt={campsite.name}/>
+                        <CardBody>
+                            <CardTitle> {campsite.name} </CardTitle>
+                            <CardText> {campsite.description} </CardText>
+                        </CardBody>
+                    </Card>
+                </div>
+            );
+        }
     }
 
     renderComments(comments){
