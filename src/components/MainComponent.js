@@ -4,17 +4,17 @@ import CampsiteInfo from './CampsiteInfoComponent';
 import Header from './HeaderComponent';
 import Footer from './FooterComponent';
 import Home from './HomeComponent';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect,withRouter } from 'react-router-dom';
 import Contact from './ContactComponent';
 import About from './AboutComponent';
 import { connect } from 'react-redux';
 
 const mapStateToProps = state => {
     return {
-        campsites = state.campsites,
-        comments = state.comments,
-        partners = state.partners,
-        promotion =state.promotions
+        campsites : state.campsites,
+        comments : state.comments,
+        partners : state.partners,
+        promotions : state.promotions
     };
 };
 
@@ -59,4 +59,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));
