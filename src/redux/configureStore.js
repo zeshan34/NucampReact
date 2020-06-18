@@ -1,10 +1,23 @@
-import  {createStore } from 'redux';
-import { Reducer, initialState } from './reducer';
+import  {createStore, combineReducers } from 'redux';
+import {Campsites} from './campsites';
+import {Comments} from './comments'
+import {Partners} from './partners';
+import {Promotions} from './promotions';
+import { CAMPSITES } from '../shared/campsites';
+import { COMMENTS } from '../shared/comments';
+import { PROMOTIONS } from '../shared/promotions';
+
 
 export const ConfigureStore = () =>{
     const store = createStore(
-        Reducer,
-        initialState
+        combineReducers({
+            compsites:CAMPSITES,
+            comments:COMMENTS,
+            partners:PARTNERS,
+            promotions:PROMOTIONS
+
+        })
     );
+       
     return store;
-} ;
+} 
