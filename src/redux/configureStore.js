@@ -1,23 +1,18 @@
-import  {createStore, combineReducers } from 'redux';
-import {Campsites} from './campsites';
-import {Comments} from './comments'
-import {Partners} from './partners';
-import {Promotions} from './promotions';
-import { CAMPSITES } from '../shared/campsites';
-import { COMMENTS } from '../shared/comments';
-import { PROMOTIONS } from '../shared/promotions';
+import {createStore, combineReducers} from 'redux';
+import { Campsites } from './campsites';
+import { Comments } from './comments';
+import { Partners } from './partners';
+import { Promotions } from './promotions';
 
-
-export const ConfigureStore = () =>{
+export const ConfigureStore = () => {
     const store = createStore(
         combineReducers({
-            compsites:CAMPSITES,
-            comments:COMMENTS,
-            partners:PARTNERS,
-            promotions:PROMOTIONS
-
+            campsites: Campsites,
+            comments: Comments,
+            partners: Partners,
+            promotions: Promotions
         })
     );
-       
+
     return store;
-} 
+}
